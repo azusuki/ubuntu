@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block main_containts %}
+{% load static %}
+
+  <p>ここからindex.htmlです。</p>
+ {% if areas %}
+    <table>
+      <tr>
+        <th>都道府県</th>
+        <th>都市名</th>
+      </tr>
+      {% for area in areas %}
+      <tr>
+        <td>{{ area.area }}</td>
+        <td>{{ area.cityname}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+   <p> ここまでindex.htmlです。</p>
+
+{% endblock %}
