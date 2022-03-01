@@ -4,7 +4,7 @@ from django.contrib import admin
 from import_export import resources
 from import_export.admin import ImportExportActionModelAdmin
 from import_export.formats import base_formats
-from myapp.models import Area
+from myapp.models import Area, Category
 
 class AreaResource(resources.ModelResource):
     class Meta:
@@ -12,7 +12,12 @@ class AreaResource(resources.ModelResource):
         fields = ('number', 'area', 'cityname')
         import_id_fields = ['number']
 
+class CategoryAdmin(admin.ModelAdmin):
+    pass
 
+admin.site.register(Category, CategoryAdmin)
+
+#CSVインポートする設定
 class AreaAdmin(ImportExportActionModelAdmin):
     list_display = (
         'number',
