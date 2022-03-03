@@ -6,7 +6,7 @@
 
   <h2>登録画面</h2>
       <div>
-          <form action="{% url 'myapp:list' %}" method="POST">
+          <form action="" method="POST">
             {% csrf_token %}
                <table>
                   {{ form.as_table }}
